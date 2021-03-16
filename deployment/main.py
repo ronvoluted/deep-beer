@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from typing import Optional, List
 from pydantic import BaseModel
@@ -100,6 +101,13 @@ app = FastAPI(
     description=description,
     version="1.0.2",
     docs_url="/"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=["*"],
+    allow_headers=["*"]
 )
 
 NUM_FEATURE_COLUMNS = 107
