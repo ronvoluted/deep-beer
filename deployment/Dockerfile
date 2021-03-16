@@ -12,4 +12,4 @@ RUN pip install scikit-learn==0.24.1
 RUN pip install torch==1.8.0
 RUN pip install uvicorn==0.13.4
 
-CMD ["uvicorn", "main:app", "--port", "80"]
+CMD ["uvicorn", "main:app"]
